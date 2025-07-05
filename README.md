@@ -1,6 +1,6 @@
 # Drools Demo
 
-This is a minimal example project using the [Drools](https://www.drools.org/) rules engine on [Quarkus](https://quarkus.io/). The project builds a simple Java application that loads a single DRL rule and executes it.
+This is a minimal example project using the [Drools](https://www.drools.org/) rules engine on [Quarkus](https://quarkus.io/). The application demonstrates a few sample rules with intentionally varied formatting to aid in testing DRL tooling.
 
 ## Requirements
 
@@ -15,4 +15,4 @@ Use Maven to build and run the demo:
 mvn quarkus:run
 ```
 
-The application inserts the string `"World"` into the session, and the rule prints a greeting.
+The application inserts the string `"World"` into the session, fires all rules, and prints the output for each.
