@@ -4,7 +4,7 @@ This is a minimal example project using the [Drools](https://www.drools.org/) ru
 
 ## Requirements
 
-- Java 21 (or later)
+- Java 17 or later
 - Maven
 
 ## Running
