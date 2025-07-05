@@ -1,0 +1,43 @@
+package com.example
+
+// A simple greeting rule
+rule "Hello World"
+when
+    $s : String()
+then
+    System.out.println("Hello " + $s);
+end
+
+// Shout a message in upper case
+rule "Shout Out"
+when
+    $s : String( this == "World" )
+then
+    System.out.println("SHOUT " + $s.toUpperCase());
+end
+
+rule "LengthIsEven"
+            dialect "java"
+when
+    $num : Integer( intValue % 2 == 0 )
+then
+    System.out.println("Even number: " + $num);
+end
+
+// Intentionally funky formatting
+rule "Mixed"
+when
+    $str : String() or
+    $n : Number()
+then
+    System.out.println( "Got: " +
+    ( $str != null ? $str : $n ) );
+end
+
+/* Sum all integers in session */
+rule "NumbersSum"
+when
+    accumulate( Integer( $v : intValue ), $sum : sum( $v ) )
+then
+    System.out.println("Sum = " + $sum);
+end
