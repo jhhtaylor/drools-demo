@@ -5,8 +5,13 @@ import org.kie.api.runtime.KieSession;
 import org.kie.internal.io.ResourceFactory;
 import org.kie.internal.utils.KieHelper;
 
-public class App {
-    public static void main(String[] args) {
+import io.quarkus.runtime.QuarkusApplication;
+import io.quarkus.runtime.annotations.QuarkusMain;
+
+@QuarkusMain
+public class App implements QuarkusApplication {
+    @Override
+    public int run(String... args) throws Exception {
         KieHelper helper = new KieHelper();
         helper.addResource(ResourceFactory.newClassPathResource("com/example/rules.drl"), ResourceType.DRL);
 
@@ -14,5 +19,6 @@ public class App {
         kSession.insert("World");
         kSession.fireAllRules();
         kSession.dispose();
+        return 0;
     }
 }
