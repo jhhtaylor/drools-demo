@@ -1,0 +1,18 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.drools:drools-compiler:8.44.2.Final'
+    implementation 'org.drools:drools-mvel:8.44.2.Final'
+}
+
+application {
+    mainClass = 'com.example.App'
+}
+
